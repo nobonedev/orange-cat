@@ -41,35 +41,38 @@ Simply open "index.html" using a browser. BOOM!
 For Software:Cat Clicker Party is a whimsical web-based application designed to bring joy with every click. Inspired by the internet’s favorite animal—cats—this app turns your screen into a playful canvas of paws, fur, and fun interactions.
 
 🎯 Features
-Instant Interaction:
+
+* Instant Interaction:
 Upon loading, users are greeted with a bold “Click Anywhere” prompt.
 
-Random Cat Placement:
+* Random Cat Placement:
 Clicking anywhere on the screen spawns a random cat image from a pool of over 200+ optimized images (20–50 KB each), randomly sized between 100px and 300px.
 
-Drag & Drop:
+* Drag & Drop:
 Users can click and drag any image around the screen, allowing for creative placement and interaction.
 
-Double-Click Fun:
+* Double-Click Fun:
 Double-clicking on a cat summons 1 to 3 more cats of the same type (e.g., tabby, siamese), randomly placed nearby.
 
-Persistent Party:
+* Persistent Party:
 Cats stay on screen even when the window is resized. The layout adjusts so images remain visible and within bound
 
 🚀 How It Works (Workflow)
-User clicks anywhere ➜ Cat image appears at cursor location.
-
+* User clicks anywhere ➜ Cat image appears at cursor location.
 Cat is:
 
-Randomly selected from a predefined pool
+- Randomly selected from a predefined pool
 
-Random size (100–300px)
+- Random size (100–300px)
 
-Image can be dragged and repositioned.
+* Image can be dragged and repositioned.
 
-Double-click on a cat ➜ 1–3 cats of similar breed pop up near it.
+* Double-click on a cat ➜ 1–3 cats of similar breed pop up near it.
 
-Images stay in viewport bounds, even on window resize
+* Images stay in viewport bounds, even on window resize
+
+
+* Images stay in viewport bounds, even on window resize
 # Screenshots
 ![Screenshot1]
 *Add caption explaining what this shows*
