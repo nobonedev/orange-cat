@@ -1,7 +1,11 @@
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    background-image: url("https://i.pinimg.com/1200x/19/c2/59/19c25988b4ac708768cc9779d10af31d.jpg");
+    background-size: cover;
     overflow: auto;
     height: 100vh;
     position: relative;
@@ -10,11 +14,25 @@ body {
 
 #clickText {
     position: fixed;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 24px;
-    color: #333;
+    color: #838383;
+    font-weight: bold;
+    z-index: 500;
+    pointer-events: none; /* Prevent text from blocking clicks */
+}
+#clickQoute {
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;    
+    font-size: 60px;
+    color: #ffdf76;
     font-weight: bold;
     z-index: 500;
     pointer-events: none; /* Prevent text from blocking clicks */
@@ -37,6 +55,5 @@ body {
 }
 
 .image:hover {
-    border: 2px solid #007bff;
     transform: scale(1.05);
 }

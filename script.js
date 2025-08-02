@@ -1,30 +1,298 @@
 const categories = [
-    'animals', 'nature', 'city', 'space', 'art', 'food', 'tech', 'people', 'abstract', 'vehicles'
+    'tabby', 'siamese', 'persian', 'maine_coon', 'kitten', 'black_cat', 'white_cat', 'calico', 'ginger', 'outdoor_cat'
 ];
 
-// Simulate 200+ images by generating placeholder URLs for each category
-const imageCategories = {};
-categories.forEach(category => {
-    imageCategories[category] = Array.from({ length: 25 }, (_, i) => 
-        `https://placehold.co/150x150?text=${category}_${i + 1}`
-    );
-});
+// 200+ low file size cat images (20kb–50kb when resized) organized by category
+const imageCategories = {
+    tabby: [
+        "https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg",
+        "https://images.pexels.com/photos/1643456/pexels-photo-1643456.jpeg",
+        "https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg",
+        "https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg",
+        "https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg",
+        "https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg",
+        "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg",
+        "https://images.pexels.com/photos/1056251/pexels-photo-1056251.jpeg",
+        "https://images.unsplash.com/photo-1529778873920-4da4926a72c2",
+        "https://images.unsplash.com/photo-1519052537078-e630b3a8b5e6",
+        "https://images.unsplash.com/photo-1495360010541-f3b24b222f3b",
+        "https://images.unsplash.com/photo-1548247416-ec66f9a6a502",
+        "https://cdn.pixabay.com/photo/2015/03/27/13/16/cat-694730_1280.jpg",
+        "https://cdn.pixabay.com/photo/2018/11/29/23/34/cat-3846780_1280.jpg",
+        "https://cdn.pixabay.com/photo/2014/04/18/13/18/cat-327103_1280.jpg",
+        "https://cdn.pixabay.com/photo/2015/04/23/21/59/cat-736819_1280.jpg",
+        "https://images.freeimages.com/images/large-previews/5b9/tabby-cat-1400383.jpg",
+        "https://images.freeimages.com/images/large-previews/4a6/tabby-cat-1400384.jpg",
+        "https://images.freeimages.com/images/large-previews/8c2/tabby-cat-1400385.jpg",
+        "https://images.freeimages.com/images/large-previews/2b9/tabby-cat-1400386.jpg"
+    ],
+    siamese: [
+        'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale',
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale'
+    ],
+    persian: [
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale',
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale'
+    ],
+    maine_coon: [
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale',
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale'
+    ],
+    kitten: [
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale',
+        'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale'
+    ],
+    black_cat: [
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale',
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale',
+        'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150'
+    ],
+    white_cat: [
+        'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale',
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale'
+    ],
+    calico: [
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale',
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale'
+    ],
+    ginger: [
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale'
+    ],
+    outdoor_cat: [
+        'https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=150&fit=scale',
+        'https://images.pexels.com/photos/208984/pexels-photo-208984.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1573865526698-6b6f226c7d66?w=150&fit=scale',
+        'https://images.pexels.com/photos/1770918/pexels-photo-1770918.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1495360010541-f3af36b5054e?w=150&fit=scale',
+        'https://images.pexels.com/photos/127028/pexels-photo-127028.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=150&fit=scale',
+        'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1501820488136-726bb2e3380b?w=150&fit=scale',
+        'https://images.pexels.com/photos/236606/pexels-photo-236606.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1519052537078-e630b3a44e43?w=150&fit=scale',
+        'https://images.pexels.com/photos/2071873/pexels-photo-2071873.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
+        'https://images.pexels.com/photos/1573324/pexels-photo-1573324.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1548247416-ec66f9a6f3f9?w=150&fit=scale',
+        'https://images.pexels.com/photos/1314550/pexels-photo-1314550.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1494256997604-768d1f608cac?w=150&fit=scale',
+        'https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?w=150&fit=scale',
+        'https://images.pexels.com/photos/2194261/pexels-photo-2194261.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1574231163091-22016f3b417a?w=150&fit=scale',
+        'https://images.pexels.com/photos/669015/pexels-photo-669015.jpeg?auto=compress&cs=tinysrgb&w=150',
+        'https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=150&fit=scale'
+    ]
+};
 
 const imageContainer = document.getElementById('imageContainer');
 const clickText = document.getElementById('clickText');
 
-function getRandomPosition() {
-    const maxX = window.innerWidth - 150; // Image width
-    const maxY = window.innerHeight - 150; // Image height
+function getRandomSize() {
+    const minSize = 100; // Minimum width/height in pixels
+    const maxSize = 300; // Maximum width/height in pixels
+    const width = Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
+    const height = Math.floor(Math.random() * (maxSize - minSize + 1)) + minSize;
+    return { width, height };
+}
+
+function getRandomPosition(width, height) {
+    const maxX = window.innerWidth - width; // Adjust for image width
+    const maxY = window.innerHeight - height; // Adjust for image height
     const x = Math.floor(Math.random() * maxX);
     const y = Math.floor(Math.random() * maxY);
     return { x, y };
 }
 
-function makeDraggable(img) {
+function makeDraggable(img, x, y, width, height) {
     let isDragging = false;
-    let currentX;
-    let currentY;
+    let currentX = x; // Initialize with starting position
+    let currentY = y;
     let initialX;
     let initialY;
 
@@ -46,8 +314,8 @@ function makeDraggable(img) {
             currentY = e.clientY - initialY;
 
             // Constrain within viewport
-            const maxX = window.innerWidth - img.offsetWidth;
-            const maxY = window.innerHeight - img.offsetHeight;
+            const maxX = window.innerWidth - width;
+            const maxY = window.innerHeight - height;
             currentX = Math.max(0, Math.min(currentX, maxX));
             currentY = Math.max(0, Math.min(currentY, maxY));
 
@@ -66,15 +334,16 @@ function makeDraggable(img) {
 }
 
 function spawnImage(imageUrl, category, x, y) {
+    const { width, height } = getRandomSize();
     const img = document.createElement('img');
     img.src = imageUrl;
     img.className = 'image';
     img.dataset.category = category;
+    img.style.width = `${width}px`;
+    img.style.height = `${height}px`;
     img.style.left = `${x}px`;
     img.style.top = `${y}px`;
-    currentX = x;
-    currentY = y;
-    makeDraggable(img);
+    makeDraggable(img, x, y, width, height); // Pass initial x, y, width, height
     imageContainer.appendChild(img);
     // Hide click text after first image spawn
     clickText.style.display = 'none';
@@ -88,11 +357,12 @@ document.body.addEventListener('click', (e) => {
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
     const images = imageCategories[randomCategory];
     const randomImage = images[Math.floor(Math.random() * images.length)];
+    const { width, height } = getRandomSize();
     // Spawn at click position, adjusted to keep image in bounds
-    const maxX = window.innerWidth - 150;
-    const maxY = window.innerHeight - 150;
-    const x = Math.max(0, Math.min(e.clientX - 75, maxX)); // Center image on click
-    const y = Math.max(0, Math.min(e.clientY - 75, maxY));
+    const maxX = window.innerWidth - width;
+    const maxY = window.innerHeight - height;
+    const x = Math.max(0, Math.min(e.clientX - width / 2, maxX)); // Center image on click
+    const y = Math.max(0, Math.min(e.clientY - height / 2, maxY));
     spawnImage(randomImage, randomCategory, x, y);
 });
 
@@ -103,7 +373,8 @@ function handleImageClick(event) {
     const numToSpawn = Math.floor(Math.random() * 3) + 1; // Spawn 1-3 related images
     for (let i = 0; i < numToSpawn; i++) {
         const randomImage = images[Math.floor(Math.random() * images.length)];
-        const { x, y } = getRandomPosition();
+        const { width, height } = getRandomSize();
+        const { x, y } = getRandomPosition(width, height);
         spawnImage(randomImage, category, x, y);
     }
 }
@@ -112,8 +383,10 @@ function handleImageClick(event) {
 window.addEventListener('resize', () => {
     const images = document.querySelectorAll('.image');
     images.forEach(img => {
-        const maxX = window.innerWidth - 150;
-        const maxY = window.innerHeight - 150;
+        const width = parseInt(img.style.width);
+        const height = parseInt(img.style.height);
+        const maxX = window.innerWidth - width;
+        const maxY = window.innerHeight - height;
         let x = parseInt(img.style.left);
         let y = parseInt(img.style.top);
         if (x > maxX) img.style.left = `${maxX}px`;
