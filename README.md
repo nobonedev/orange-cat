@@ -1,7 +1,7 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# orange cat 
+# orange cat - A *Useless* Project
 
 
 ## Basic Details
@@ -9,11 +9,11 @@
 
 
 ### Team Members
-- Team Lead: Noel - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Noel Clement](https://github.com/nobonedev) - AISAT, Kalamassery
+- Member 2: [Calvin Antony Joseph](https://github.com/calvinantonyjoseph) - AISAT, Kalamassery
 
 ### Project Description
-[2-3 lines about what your project does]
+This super fun web app lets you dive into a purr-fectly delightful cat-themed adventure! Just load it up, and a bold "Click Anywhere" pops up, begging you to get started. Click anywhere, and poof—a random cat pic (from a stash of 200+ low-file-size cuties, think 20kb–50kb, pulled from Unsplash and Pexels) lands right where you clicked, sized randomly between 100px and 300px for that extra charm. Drag those adorable kitties around with your mouse, double-click to summon 1–3 more from the same crew (like tabby or siamese squads), and watch them scatter randomly across the screen. It’s an endless cat party—images stick around, stay in bounds even if you resize the window, and it’s all built with snappy HTML, CSS, and JavaScript for a smooth, playful vibe!
 
 ### The Problem (that doesn't exist)
 [What ridiculous problem are you solving?]
@@ -22,74 +22,39 @@
 [How are you solving it? Keep it fun!]
 
 ## Technical Details
-### Technologies/Components Used
-For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
-
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+#### Languages used:
+- HTML
+- CSS
+- Vanila Javascript
 
 ### Implementation
-For Software:
+
 # Installation
-[commands]
+Run the given command on a terminal/cmd
+
+``[git clone https://github.com/nobonedev/orange-cat.git]``
 
 # Run
-[commands]
+Simply open "index.html" using a browser. BOOM!
 
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+# Screenshots
+![Screenshot1]
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
 [Add your demo video link here]
 *Explain what the video demonstrates*
 
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Noel Clement](https://github.com/nobonedev): HTML , CSS 
+- [Calvin Antony](https://github.com/calvinantonyjoseph) : Javascript
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
