@@ -10,8 +10,8 @@ categories.forEach(category => {
     );
 });
 
-const randomButton = document.getElementById('randomButton');
 const imageContainer = document.getElementById('imageContainer');
+const clickText = document.getElementById('clickText');
 
 function getRandomPosition() {
     const maxX = window.innerWidth - 150; // Image width
@@ -21,32 +21,90 @@ function getRandomPosition() {
     return { x, y };
 }
 
-function spawnImage(imageUrl, category) {
+function makeDraggable(img) {
+    let isDragging = false;
+    let currentX;
+    let currentY;
+    let initialX;
+    let initialY;
+
+    img.addEventListener('mousedown', startDragging);
+    img.addEventListener('dblclick', handleImageClick); // Double-click for spawning
+
+    function startDragging(e) {
+        e.preventDefault(); // Prevent default to avoid image drag behavior
+        initialX = e.clientX - currentX;
+        initialY = e.clientY - currentY;
+        isDragging = true;
+        img.style.zIndex = 1000; // Bring to front while dragging
+    }
+
+    function drag(e) {
+        if (isDragging) {
+            e.preventDefault();
+            currentX = e.clientX - initialX;
+            currentY = e.clientY - initialY;
+
+            // Constrain within viewport
+            const maxX = window.innerWidth - img.offsetWidth;
+            const maxY = window.innerHeight - img.offsetHeight;
+            currentX = Math.max(0, Math.min(currentX, maxX));
+            currentY = Math.max(0, Math.min(currentY, maxY));
+
+            img.style.left = `${currentX}px`;
+            img.style.top = `${currentY}px`;
+        }
+    }
+
+    function stopDragging() {
+        isDragging = false;
+        img.style.zIndex = 'auto'; // Reset z-index
+    }
+
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDragging);
+}
+
+function spawnImage(imageUrl, category, x, y) {
     const img = document.createElement('img');
     img.src = imageUrl;
     img.className = 'image';
     img.dataset.category = category;
-    const { x, y } = getRandomPosition();
     img.style.left = `${x}px`;
     img.style.top = `${y}px`;
-    img.addEventListener('click', handleImageClick);
+    currentX = x;
+    currentY = y;
+    makeDraggable(img);
     imageContainer.appendChild(img);
+    // Hide click text after first image spawn
+    clickText.style.display = 'none';
 }
 
-randomButton.addEventListener('click', () => {
+// Spawn image on viewport click
+document.body.addEventListener('click', (e) => {
+    // Ignore clicks on images to avoid conflicts with drag or double-click
+    if (e.target.classList.contains('image')) return;
+    
     const randomCategory = categories[Math.floor(Math.random() * categories.length)];
     const images = imageCategories[randomCategory];
     const randomImage = images[Math.floor(Math.random() * images.length)];
-    spawnImage(randomImage, randomCategory);
+    // Spawn at click position, adjusted to keep image in bounds
+    const maxX = window.innerWidth - 150;
+    const maxY = window.innerHeight - 150;
+    const x = Math.max(0, Math.min(e.clientX - 75, maxX)); // Center image on click
+    const y = Math.max(0, Math.min(e.clientY - 75, maxY));
+    spawnImage(randomImage, randomCategory, x, y);
 });
 
 function handleImageClick(event) {
+    event.preventDefault(); // Prevent default behavior
     const category = event.target.dataset.category;
     const images = imageCategories[category];
     const numToSpawn = Math.floor(Math.random() * 3) + 1; // Spawn 1-3 related images
     for (let i = 0; i < numToSpawn; i++) {
         const randomImage = images[Math.floor(Math.random() * images.length)];
-        spawnImage(randomImage, category);
+        const { x, y } = getRandomPosition();
+        spawnImage(randomImage, category, x, y);
     }
 }
 

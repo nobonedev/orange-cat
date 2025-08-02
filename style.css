@@ -5,24 +5,19 @@ body {
     overflow: auto;
     height: 100vh;
     position: relative;
+    cursor: pointer; /* Indicate clickable viewport */
 }
 
-button {
+#clickText {
     position: fixed;
-    top: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    z-index: 1000;
-}
-
-button:hover {
-    background-color: #0056b3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    z-index: 500;
+    pointer-events: none; /* Prevent text from blocking clicks */
 }
 
 #imageContainer {
@@ -35,9 +30,10 @@ button:hover {
     position: absolute;
     max-width: 150px;
     max-height: 150px;
-    cursor: pointer;
+    cursor: move; /* Indicates draggable */
     border: 2px solid transparent;
     transition: border 0.3s, transform 0.2s;
+    user-select: none; /* Prevent text selection during drag */
 }
 
 .image:hover {
