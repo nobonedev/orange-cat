@@ -7,7 +7,7 @@
 ## Basic Details
 ### Team Name: Maveriks
 
-
+  
 ### Team Members
 - Member 1: [Noel Clement](https://github.com/nobonedev) - AISAT, Kalamassery
 - Member 2: [Calvin Antony Joseph](https://github.com/calvinantonyjoseph) - AISAT, Kalamassery
