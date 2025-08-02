@@ -25,7 +25,7 @@ const imageCategories = {
         "https://images.freeimages.com/images/large-previews/4a6/tabby-cat-1400384.jpg",
         "https://images.freeimages.com/images/large-previews/8c2/tabby-cat-1400385.jpg",
         "https://images.freeimages.com/images/large-previews/2b9/tabby-cat-1400386.jpg"
-    ],
+      ],
     siamese: [
         'https://images.pexels.com/photos/1269188/pexels-photo-1269188.jpeg?auto=compress&cs=tinysrgb&w=150',
         'https://images.unsplash.com/photo-1516728778615-2d590ea1856e?w=150&fit=scale',
