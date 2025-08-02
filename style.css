@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow: auto;
+    height: 100vh;
+    position: relative;
+}
+
+button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    position: absolute;
+    max-width: 150px;
+    max-height: 150px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s, transform 0.2s;
+}
+
+.image:hover {
+    border: 2px solid #007bff;
+    transform: scale(1.05);
+}
