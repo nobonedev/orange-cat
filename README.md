@@ -13,13 +13,13 @@
 - Member 2: [Calvin Antony Joseph](https://github.com/calvinantonyjoseph) - AISAT, Kalamassery
 
 ### Project Description
-This super fun web app lets you dive into a purr-fectly delightful cat-themed adventure! Just load it up, and a bold "Click Anywhere" pops up, begging you to get started. Click anywhere, and poof—a random cat pic (from a stash of 200+ low-file-size cuties, think 20kb–50kb, pulled from Unsplash and Pexels) lands right where you clicked, sized randomly between 100px and 300px for that extra charm. Drag those adorable kitties around with your mouse, double-click to summon 1–3 more from the same crew (like tabby or siamese squads), and watch them scatter randomly across the screen. It’s an endless cat party—images stick around, stay in bounds even if you resize the window, and it’s all built with snappy HTML, CSS, and JavaScript for a smooth, playful vibe!
+This super fun web app lets you dive into a purr-fectly delightful cat-themed adventure! Click anywhere, and poof—a random cat pic (from a stash of 200+ cars pulled from Unsplash and Pexels) lands right where you clicked, sized randomly between 100px and 300px for that extra charm. Drag those adorable kitties around with your mouse, double-click to summon 1–3 more from the same crew (like tabby or siamese squads), and watch them scatter randomly across the screen. It’s an endless cat party—images stick around, stay in bounds even if you resize the window, and it’s all built with snappy HTML, CSS, and JavaScript for a smooth, playful vibe!
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+No cat spawns when clicked randomly on a webpage :(
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+So we made a web app that displays cat images when clicked randomly on a webpage :) #happy!
 
 ## Technical Details
 #### Languages used:
@@ -72,18 +72,21 @@ Cat is:
 * Images stay in viewport bounds, even on window resize
 
 
-* Images stay in viewport bounds, even on window resize
 # Screenshots
-![Screenshot1]
-*Add caption explaining what this shows*
+<img width="3188" height="1202" alt="frame (3)" src="https://github.com/nobonedev/orange-cat/blob/main/shot1.png"/>
+*Initial webpage*
 
 
+<img width="3188" height="1202" alt="frame (3)" src="https://github.com/nobonedev/orange-cat/blob/main/shot2.png"/>
+*First click*
 
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
 
+<img width="3188" height="1202" alt="frame (3)" src="https://github.com/nobonedev/orange-cat/blob/main/shot3.png"/>
+*Double-clicked on the appeared image*
+
+
+<img width="3188" height="1202" alt="frame (3)" src="https://github.com/nobonedev/orange-cat/blob/main/shot3.png"/>
+*After relentlessly clicking randmly everywhere*
 
 ## Team Contributions
 - [Noel Clement](https://github.com/nobonedev): HTML , CSS 
